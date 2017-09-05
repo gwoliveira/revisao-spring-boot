@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Números</h1>
+<ul>
+    <li th:each="numero : ${meus_numeros}" th:text="${numero}"></li>
+</ul>
+<footer>
+    <img src="/una-logo.jpg" alt="logouna"/> una-2017
+</footer>
+</body>
+</html>

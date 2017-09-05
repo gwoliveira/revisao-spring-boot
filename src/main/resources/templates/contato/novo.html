@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+novo contato
+
+<form th:action="@{/contato/salvar}" th:object="${contato}" method="post">
+    <input type="text" th:field="*{nome}"/>
+    <input type="text" th:field="*{telefone}"/>
+    <button type="submit">salvar</button>
+</form>
+
+<a th:href="@{/contato}">voltar para listagem</a>
+
+</body>
+</html>
