@@ -1,5 +1,7 @@
 package br.una.revisao.entity;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +12,7 @@ public class Contato {
     @Id
     @GeneratedValue
     private Long id;
+    @NotBlank
     @NotNull
     private String nome;
     @NotNull

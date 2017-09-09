@@ -1,12 +1,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
 <body>
 
-novo contato
+<h2>novo contato</h2>
 
 <form th:action="@{/contato/salvar}" th:object="${contato}" method="post">
-    <input type="text" th:field="*{nome}"/>
-    <input type="text" th:field="*{telefone}"/>
-    <button type="submit">salvar</button>
+    <input type="hidden" th:field="*{id}"/>
+    <input class="form-control" type="text" th:field="*{nome}"/>
+    <input class="form-control" type="text" th:field="*{telefone}"/>
+    <button class="btn btn-primary" type="submit">salvar</button>
 </form>
 
 <a th:href="@{/contato}">voltar para listagem</a>

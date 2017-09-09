@@ -1,18 +1,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
 <body>
-listagem
+<h2>listagem</h2>
 
-<table>
+<table class="table">
     <thead>
-    <tr>
+    <tr scope="row">
         <th>nome</th>
         <th>telefone</th>
+        <th>ações</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="contato:${contatos}">
+    <tr th:each="contato:${contatos}" scope="row">
         <td th:text="${contato.nome}"></td>
         <td th:text="${contato.telefone}"></td>
+        <td><a th:href="@{/contato/{id}/delete(id=${contato.id})}">deletar</a>
+            <a th:href="@{/contato/{id}(id=${contato.id})}">editar</a></td>
     </tr>
     </tbody>
 </table>

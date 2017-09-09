@@ -24,6 +24,20 @@ public class ContatoController {
         model.addAttribute("contato", contato);
         return "contato/novo";
     }
+
+    @GetMapping("/contato/{id}")
+    public String editar(Model model, @PathVariable Long id){
+        Contato contato = contatoRepository.findOne(id);
+        model.addAttribute("contato", contato);
+        return "contato/novo";
+    }
+
+    @GetMapping("/contato/{id}/delete")
+    public String delete(@PathVariable Long id){
+        contatoRepository.delete(id);
+        return "redirect:/contato";
+    }
+
     @PostMapping("/contato/salvar")
     public String salvar(@ModelAttribute Contato contato){
         contatoRepository.save(contato);
